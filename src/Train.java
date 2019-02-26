@@ -4,4 +4,6 @@ public class Train {
     SeatClass businessclass;
     SeatClass economy;
 
+
+
 }

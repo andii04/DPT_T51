@@ -1,4 +1,8 @@
 public class Bronze implements IState {
+    public Bronze() {
+
+    }
+
     @Override
     public void changeState(Driverstate driverstate) {
 

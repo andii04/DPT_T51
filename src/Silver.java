@@ -8,4 +8,7 @@ public class Silver implements IState {
     public void addStateListener(IStateListener listener) {
 
     }
+
+    public Silver() {
+    }
 }

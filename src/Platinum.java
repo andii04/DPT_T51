@@ -1,4 +1,7 @@
 public class Platinum implements IState {
+    public Platinum() {
+    }
+
     @Override
     public void changeState(Driverstate driverstate) {
 

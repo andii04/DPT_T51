@@ -1,4 +1,7 @@
 public class Blue implements IState {
+    public Blue() {
+    }
+
     @Override
     public void changeState(Driverstate driverstate) {
 
