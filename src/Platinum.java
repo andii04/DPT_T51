@@ -1,9 +1,11 @@
 public class Platinum implements IState {
-    public Platinum() {
+    private final Passenger passenger;
+    public Platinum(Passenger passenger) {
+        this.passenger = passenger;
     }
 
     @Override
-    public void changeState(Driverstate driverstate) {
+    public void changeState(Passenger passenger) {
 
     }
 

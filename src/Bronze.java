@@ -1,10 +1,16 @@
 public class Bronze implements IState {
-    public Bronze() {
-
+    private final Passenger passenger;
+    public Bronze(Passenger passenger) {
+        this.passenger = passenger;
     }
 
     @Override
-    public void changeState(Driverstate driverstate) {
+    public void changeState(Passenger passenger) {
+        //passenger.setDriverstate(passenger.getDriverstate());
+        System.out.println("ConcreteState0");
+        //Zustandswechsel, ggf. mit Bedingung
+        //context.setState(context.getConcreteState2());
+        passenger.setState(passenger.getState());
 
     }
 

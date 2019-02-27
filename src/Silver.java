@@ -1,6 +1,7 @@
 public class Silver implements IState {
+    private final Passenger passenger;
     @Override
-    public void changeState(Driverstate driverstate) {
+    public void changeState(Passenger passenger) {
 
     }
 
@@ -9,6 +10,7 @@ public class Silver implements IState {
 
     }
 
-    public Silver() {
+    public Silver(Passenger passenger) {
+        this.passenger = passenger;
     }
 }

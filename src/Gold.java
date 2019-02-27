@@ -1,10 +1,12 @@
 public class Gold implements IState {
-    public Gold() {
+    private final Passenger passenger;
+    public Gold(Passenger passenger) {
+        this.passenger = passenger;
 
     }
 
     @Override
-    public void changeState(Driverstate driverstate) {
+    public void changeState(Passenger passenger) {
 
     }
 

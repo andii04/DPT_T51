@@ -3,11 +3,20 @@ public class Passenger {
     private String name;
     private Driverstate driverstate;
 
+
     public Passenger(IState state, String name, Driverstate driverstate) {
         this.state = state;
         this.name = name;
         this.driverstate = driverstate;
     }
+
+
+    /*public void pressButton(){
+
+    }
+    public void notifyListeners(){
+
+    }*/
 
     public IState getState() {
         return state;
