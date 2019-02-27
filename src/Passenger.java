@@ -1,15 +1,16 @@
 public class Passenger {
     private IState state;
     private String name;
-    private Driverstate driverstate;
+    private Passenger passenger;
 
-
-    public Passenger(IState state, String name, Driverstate driverstate) {
+    public Passenger(IState state, String name) {
         this.state = state;
         this.name = name;
-        this.driverstate = driverstate;
     }
 
+    public void operate(){
+        state.changeState(passenger);
+    }
 
     /*public void pressButton(){
 
@@ -34,11 +35,4 @@ public class Passenger {
         this.name = name;
     }
 
-    public Driverstate getDriverstate() {
-        return driverstate;
-    }
-
-    public void setDriverstate(Driverstate driverstate) {
-        this.driverstate = driverstate;
-    }
 }

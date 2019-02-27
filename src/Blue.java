@@ -1,19 +1,23 @@
 public class Blue implements IState {
+
     private final Passenger passenger;
     private IStateListener listener;
 
+
+
     public Blue(Passenger passenger) {
         this.passenger = passenger;
+        passenger.setState(new Blue(this.passenger));
     }
 
     @Override
     public void changeState(Passenger passenger) {
-        //passenger.setDriverstate(passenger.getDriverstate());
+
         System.out.println("ConcreteState0");
         //Zustandswechsel, ggf. mit Bedingung
         //context.setState(context.getConcreteState2());
 
-        //not sure if richtig: //passenger.setState(new Bronze());
+        passenger.setState(new Bronze(this.passenger));
     }
 
     @Override
