@@ -1,13 +1,12 @@
 public class Blue implements IState {
 
-    int points;
+    int points=0;
     public void promote(Passenger passenger, int points) {
         //points.....;
         this.points += points;
         if(points>1999 && points <4250) {
             passenger.setState(new Bronze());
         }
-        //noch falsche Werte für Points
         else if(points>=4250 && points <6500)
         {
             passenger.setState(new Silver());
