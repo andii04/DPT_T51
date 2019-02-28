@@ -4,8 +4,9 @@ public class Passenger {
     private City target;
     private SeatClass seatClass;
 
-    public Passenger(IState state, String name) {
-        this.state = state;
+    public Passenger(String name) {
+        //folgende Zeile geändert: Passenger Startzustand S0 = Blue ?
+        this.state = new Blue();
         this.name = name;
     }
 
