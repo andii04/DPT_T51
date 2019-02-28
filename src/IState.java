@@ -1,3 +1,3 @@
 public interface IState {
-    void promote(Passenger passenger);
+    void promote(Passenger passenger,int points);
 }

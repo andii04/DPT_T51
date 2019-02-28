@@ -1,6 +1,7 @@
 public class Platinum implements IState {
+    int points;
     @Override
-    public void promote(Passenger passenger) {
+    public void promote(Passenger passenger,int points) {
 
     }
 }
