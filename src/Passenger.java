@@ -1,15 +1,17 @@
 public class Passenger {
     private IState state;
     private String name;
-    private Passenger passenger;
+    private City target;
+    private SeatClass seatClass;
 
     public Passenger(IState state, String name) {
         this.state = state;
         this.name = name;
     }
 
-    public void operate(){
-        state.changeState(passenger);
+
+    public void promote(){
+        state.promote(this);
     }
 
     /*public void pressButton(){

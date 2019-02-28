@@ -1,3 +1,3 @@
-public class SeatClass {
-
+public enum SeatClass {
+    First, Economy, Business
 }

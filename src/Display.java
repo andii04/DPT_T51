@@ -1,4 +1,4 @@
-public class Display implements IStateListener {
+public class Display  {
     private String text;
 
     public void showState() {
