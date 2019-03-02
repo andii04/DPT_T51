@@ -7,6 +7,17 @@ public class Blue implements IState {
         if(points>1999 && points <4250) {
             passenger.setState(new Bronze());
         }
+        else {
+            System.out.println("State is not changing");
+        }
+
+
+
+        //old code:
+        /*this.points += points;
+        if(points>1999 && points <4250) {
+            passenger.setState(new Bronze());
+        }
         else if(points>=4250 && points <6500)
         {
             passenger.setState(new Silver());
@@ -21,7 +32,7 @@ public class Blue implements IState {
         }
         else {
             System.out.println("Fehler");
-        }
+        }*/
 
     }
 }
