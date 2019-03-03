@@ -5,13 +5,13 @@ public class L01_Blue extends Lounge {
     }
 
     @Override
-    void choseLounge(Passenger passenger) {
+    public void choseLounge(Passenger passenger) {
         if (canHandle(passenger)) {
             if (passengersInLounge.size() < maxCapacity) {
                 super.passengersInLounge.add(passenger);
             }
         }
-        getSuccessor().choseLounge(passenger);
+        super.choseLounge(passenger);
     }
 
 

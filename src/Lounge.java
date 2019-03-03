@@ -12,7 +12,12 @@ public abstract class Lounge {
         passengersInLounge = new ArrayList<>();
     }
 
-    abstract void choseLounge(Passenger passenger);
+    public void choseLounge(Passenger passenger) {
+        if(successor == null) {
+            System.out.println("Unable to handle " + passenger);
+        }
+        successor.choseLounge(passenger);
+    }
 
     abstract boolean canHandle(Passenger passenger);
 
