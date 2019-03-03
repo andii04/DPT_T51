@@ -1,8 +1,9 @@
+//COR
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Lounge {
-    int maxCapacity = 2500;
+    int maxCapacity = 5000;
     private Lounge successor;
 
     List<Passenger> passengersInLounge;
@@ -28,4 +29,7 @@ public abstract class Lounge {
     public void setSuccessor(Lounge successor) {
         this.successor = successor;
     }
+
+
+
 }

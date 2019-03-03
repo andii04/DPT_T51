@@ -1,5 +1,7 @@
+//Observer
 public interface ITrainListener {
 
-    void trainReady();
+    void trainReady(Train train);
+    City getTarget();
 
 }

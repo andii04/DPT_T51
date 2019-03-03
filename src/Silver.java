@@ -1,15 +1,25 @@
 public class Silver implements IState {
     int points;
+
+    public Silver(int points) {
+        this.points = points;
+    }
+
     @Override
     public void promote(Passenger passenger, int points) {
         //points.....;
         this.points += points;
-        if(points>=6500 && points <11500)
+        if(this.points>=6500 && this.points <11500)
         {
-            passenger.setState(new Gold());
+            passenger.setState(new Gold(this.points));
         }
         else {
             System.out.println("State is not changing");
         }
+    }
+
+    @Override
+    public int getPoints() {
+        return points;
     }
 }

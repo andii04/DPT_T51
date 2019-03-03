@@ -1,9 +1,12 @@
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Application {
-    public static void main(String[] args) {
-
+class ApplicationTest {
+    @Test
+    public void Test(){
         ArrayList<Train> trains;
 
         Passenger[] passengers = new Passenger[5000];
@@ -47,7 +50,7 @@ public class Application {
             int x = r.nextInt(10);
             if (counterTrain[x]<500){
                 counterTrain[x]++;
-                passengers[i].setTarget(inttoTarget(x));
+                passengers[i].setTarget(Application.inttoTarget(x));
             }
             else{
                 while (counterTrain[x]==500){
@@ -55,7 +58,7 @@ public class Application {
                     if(x==10)x=0;
                 }
                 counterTrain[x]++;
-                passengers[i].setTarget(inttoTarget(x));
+                passengers[i].setTarget(Application.inttoTarget(x));
             }
 
         }
@@ -73,8 +76,8 @@ public class Application {
                     }
                 }
                 else {
-                p.setSeatClass(SeatClass.First);
-                t.setCapacityFirst(t.getCapacityFirst()-1);
+                    p.setSeatClass(SeatClass.First);
+                    t.setCapacityFirst(t.getCapacityFirst()-1);
                 }
 
             }
@@ -238,9 +241,9 @@ public class Application {
                     p.setSeatClass(SeatClass.First);
                     t.setCapacityFirst(t.getCapacityFirst()-1);
                 }
-        }
+            }
 
-    } //Bad code
+        } //Bad code
 
         //Don't works
         L03_Gold_Platinum goldLounge = new L03_Gold_Platinum(null);
@@ -251,40 +254,21 @@ public class Application {
             display.addListener(p);
             //blueLounge.choseLounge(p);
         }
+        display.notifyPassengers(trains.get(0));
+        trains.get(0).calculatepoints();
 
-        //Trains start
-        for(int i=0;i<10;i++){
-        display.notifyPassengers(trains.get(i));
-        trains.get(i).calculatepoints();
+        //Test if points where added
+        int points = 0;
+        for (Passenger p:passengers) {
+            points += p.getState().getPoints();
         }
+        Assertions.assertTrue(points>0);
 
+        //Test if Persons have their Seatclass
+        SeatClass seatClass = passengers[123].getSeatClass();
+        Assertions.assertTrue(seatClass == SeatClass.First || seatClass==SeatClass.Business|| seatClass==SeatClass.Economy);
     }
 
-    public static City inttoTarget(int i){
-        switch(i){
-            case 0:
-                return City.A;
-            case 1:
-                return City.B;
-            case 2:
-                return  City.C;
-            case 3:
-                return  City.D;
-            case 4:
-                return  City.E;
-            case 5:
-                return  City.F;
-            case 6:
-                return  City.G;
-            case 7:
-                return  City.H;
-            case 8:
-                return  City.I;
-            case 9:
-                return  City.J;
-                default:
-                    return null;
-        }
-    }
+
 }
 
