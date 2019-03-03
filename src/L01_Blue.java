@@ -4,14 +4,14 @@ public class L01_Blue extends Lounge {
         this.setSuccessor(successor);
     }
 
-    public void choseLounge(Lounge lounge) {
-        if(lounge.equals("L01_Blue"))
+    public void choseLounge(Passenger passenger) {
+        if(passenger.getState() instanceof Blue)
         {
-            System.out.println("Lounge : " + lounge);
+            System.out.println("Lounge Blue");
         }
         else
         {
-            super.choseLounge(lounge);
+            super.choseLounge(passenger);
         }
     }
 }

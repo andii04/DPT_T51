@@ -3,18 +3,18 @@ public class Lounge {
     int maxCapacity = 2500;
     private Lounge successor;
 
-    public void choseLounge(Lounge lounge){
+    public void choseLounge(Passenger passenger){
+
         if (getSuccessor() != null)
         {
-            getSuccessor().choseLounge(lounge);
-            maxCapacity--;
+            getSuccessor().choseLounge(passenger);
         }
         else
-            System.out.println("unable to find the correct lounge : " + lounge);
+            System.out.println("unable to find the correct lounge : " );
     }
 
-    protected boolean canChoseLounge(Lounge lounge,Passenger passenger) {
-        if(lounge.maxCapacity >0 && passenger.getState().equals(lounge))
+    protected boolean canChoseLounge(Passenger passenger) {
+        if(passenger.getState() instanceof Blue && maxCapacity >0)
         {
             return true;
         }
