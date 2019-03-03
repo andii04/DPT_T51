@@ -1,10 +1,10 @@
 public class Driverstate {
     private IState state;
-    public void pressButton(){
 
+    public void pressButton() {
     }
-    public void notifyListeners(){
 
+    public void notifyListeners() {
     }
 
     public IState getState() {

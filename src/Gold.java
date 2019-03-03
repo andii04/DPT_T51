@@ -1,18 +1,15 @@
 public class Gold implements IState {
-    int points;
+    private int points;
 
     public Gold(int points) {
-        this.points=points;
+        this.points = points;
     }
 
-    public void promote(Passenger passenger,int points) {
-        //points.....;
+    public void promote(Passenger passenger, int points) {
         this.points += points;
-        if(this.points>=11500)
-        {
+        if (this.points >= 11500) {
             passenger.setState(new Platinum(this.points));
-        }
-        else {
+        } else {
             System.out.println("State not changing");
         }
     }

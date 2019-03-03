@@ -1,17 +1,15 @@
 //State
 public class Blue implements IState {
-    int points=0;
+    int points = 0;
+
     public void promote(Passenger passenger, int points) {
-        this.points+=points;
-        if(this.points>1999 && this.points <4250) {
+        this.points += points;
+        if (this.points > 1999 && this.points < 4250) {
             passenger.setState(new Bronze(this.points));
             System.out.println("Promoted to bronze");
-        }
-        else {
+        } else {
             System.out.println("State is not changing");
         }
-
-
     }
 
     @Override

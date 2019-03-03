@@ -1,5 +1,5 @@
 public class Silver implements IState {
-    int points;
+    private int points;
 
     public Silver(int points) {
         this.points = points;
@@ -9,11 +9,9 @@ public class Silver implements IState {
     public void promote(Passenger passenger, int points) {
         //points.....;
         this.points += points;
-        if(this.points>=6500 && this.points <11500)
-        {
+        if (this.points >= 6500 && this.points < 11500) {
             passenger.setState(new Gold(this.points));
-        }
-        else {
+        } else {
             System.out.println("State is not changing");
         }
     }

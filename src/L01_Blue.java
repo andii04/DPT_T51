@@ -1,5 +1,4 @@
 public class L01_Blue extends Lounge {
-
     public L01_Blue(Lounge successor) {
         super(successor);
     }
@@ -10,10 +9,8 @@ public class L01_Blue extends Lounge {
             if (passengersInLounge.size() < maxCapacity) {
                 super.passengersInLounge.add(passenger);
             }
-        }
-        super.choseLounge(passenger);
+        } else super.choseLounge(passenger);
     }
-
 
     @Override
     boolean canHandle(Passenger passenger) {

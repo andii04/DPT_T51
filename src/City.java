@@ -1,3 +1,3 @@
 public enum City {
-    A,B,C,D,E,F,G,H,I,J
+    A, B, C, D, E, F, G, H, I, J
 }

@@ -1,5 +1,4 @@
 public class L03_Gold_Platinum extends Lounge {
-
     public L03_Gold_Platinum(Lounge successor) {
         super(successor);
     }
@@ -10,10 +9,8 @@ public class L03_Gold_Platinum extends Lounge {
             if (passengersInLounge.size() < maxCapacity) {
                 super.passengersInLounge.add(passenger);
             }
-        }
-        super.choseLounge(passenger);
+        } else super.choseLounge(passenger);
     }
-
 
     @Override
     boolean canHandle(Passenger passenger) {

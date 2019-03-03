@@ -3,6 +3,16 @@ public class Passenger implements ITrainListener {
     private IState state;
     private String name;
     private int travelledDistances;
+    private int travelledDistance = 0;
+    private City target;
+    private SeatClass seatClass;
+
+    public Passenger(String name) {
+        //folgende Zeile geändert: Passenger Startzustand S0 = Blue ?
+        this.state = new Blue();
+        this.name = name;
+    }
+
     public void incresetravelledDistance() {
         travelledDistance++;
     }
@@ -11,17 +21,13 @@ public class Passenger implements ITrainListener {
         return travelledDistance;
     }
 
-    private int travelledDistance =0;
-
-    public void setTarget(City target) {
-        this.target = target;
-    }
-
     public City getTarget() {
         return target;
     }
 
-    private City target;
+    public void setTarget(City target) {
+        this.target = target;
+    }
 
     public SeatClass getSeatClass() {
         return seatClass;
@@ -31,17 +37,8 @@ public class Passenger implements ITrainListener {
         this.seatClass = seatClass;
     }
 
-    private SeatClass seatClass;
-
-    public Passenger(String name) {
-        //folgende Zeile geändert: Passenger Startzustand S0 = Blue ?
-        this.state = new Blue();
-        this.name = name;
-    }
-
-
-    public void promote(int points){
-        state.promote(this,points);
+    public void promote(int points) {
+        state.promote(this, points);
     }
 
     public IState getState() {

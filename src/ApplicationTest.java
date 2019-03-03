@@ -6,13 +6,10 @@ import java.util.Random;
 
 class ApplicationTest {
     @Test
-    public void Test(){
+    public void Test() {
         ArrayList<Train> trains;
-
         Passenger[] passengers = new Passenger[5000];
-
-        for(int i=0;i<passengers.length;i++)
-        {
+        for (int i = 0; i < passengers.length; i++) {
             passengers[i] = new Passenger("Test");
             passengers[i].setState(new Blue());
         }
@@ -27,7 +24,6 @@ class ApplicationTest {
         Train trainH = new Train(City.H);
         Train trainI = new Train(City.I);
         Train trainJ = new Train(City.J);
-
         trains = new ArrayList<>();
         trains.add(trainA);
         trains.add(trainB);
@@ -39,234 +35,195 @@ class ApplicationTest {
         trains.add(trainH);
         trains.add(trainI);
         trains.add(trainJ);
-
         Integer[] counterTrain = new Integer[10];
-        for(int i = 0; i<10; i++){
-            counterTrain[i]=0;
+        for (int i = 0; i < 10; i++) {
+            counterTrain[i] = 0;
         }
-
-        for(int i=0;i<5000; i++){
+        for (int i = 0; i < 5000; i++) {
             Random r = new Random();
             int x = r.nextInt(10);
-            if (counterTrain[x]<500){
+            if (counterTrain[x] < 500) {
                 counterTrain[x]++;
                 passengers[i].setTarget(Application.inttoTarget(x));
-            }
-            else{
-                while (counterTrain[x]==500){
+            } else {
+                while (counterTrain[x] == 500) {
                     x++;
-                    if(x==10)x=0;
+                    if (x == 10) x = 0;
                 }
                 counterTrain[x]++;
                 passengers[i].setTarget(Application.inttoTarget(x));
             }
-
         }
-        for (Passenger p: passengers) {
-            if(p.getTarget() == City.A){
+        for (Passenger p : passengers) {
+            if (p.getTarget() == City.A) {
                 Train t = trains.get(0);
-                if(t.getCapacityFirst()==0){
-                    if (t.getCapacityEconomy()==0){
+                if (t.getCapacityFirst() == 0) {
+                    if (t.getCapacityEconomy() == 0) {
                         p.setSeatClass(SeatClass.Business);
-                        t.setCapacityBusiness(t.getCapacityBusiness()-1);
-                    }
-                    else {
+                        t.setCapacityBusiness(t.getCapacityBusiness() - 1);
+                    } else {
                         p.setSeatClass(SeatClass.Economy);
-                        t.setCapacityEconomy(t.getCapacityEconomy()-1);
+                        t.setCapacityEconomy(t.getCapacityEconomy() - 1);
                     }
-                }
-                else {
+                } else {
                     p.setSeatClass(SeatClass.First);
-                    t.setCapacityFirst(t.getCapacityFirst()-1);
+                    t.setCapacityFirst(t.getCapacityFirst() - 1);
                 }
-
-            }
-            else if(p.getTarget() == City.B){
+            } else if (p.getTarget() == City.B) {
                 Train t = trains.get(1);
-                if(t.getCapacityFirst()==0){
-                    if (t.getCapacityEconomy()==0){
+                if (t.getCapacityFirst() == 0) {
+                    if (t.getCapacityEconomy() == 0) {
                         p.setSeatClass(SeatClass.Business);
-                        t.setCapacityBusiness(t.getCapacityBusiness()-1);
-                    }
-                    else {
+                        t.setCapacityBusiness(t.getCapacityBusiness() - 1);
+                    } else {
                         p.setSeatClass(SeatClass.Economy);
-                        t.setCapacityEconomy(t.getCapacityEconomy()-1);
+                        t.setCapacityEconomy(t.getCapacityEconomy() - 1);
                     }
-                }
-                else {
+                } else {
                     p.setSeatClass(SeatClass.First);
-                    t.setCapacityFirst(t.getCapacityFirst()-1);
+                    t.setCapacityFirst(t.getCapacityFirst() - 1);
                 }
-
-            }
-            else if(p.getTarget() == City.C){
+            } else if (p.getTarget() == City.C) {
                 Train t = trains.get(2);
-                if(t.getCapacityFirst()==0){
-                    if (t.getCapacityEconomy()==0){
+                if (t.getCapacityFirst() == 0) {
+                    if (t.getCapacityEconomy() == 0) {
                         p.setSeatClass(SeatClass.Business);
-                        t.setCapacityBusiness(t.getCapacityBusiness()-1);
-                    }
-                    else {
+                        t.setCapacityBusiness(t.getCapacityBusiness() - 1);
+                    } else {
                         p.setSeatClass(SeatClass.Economy);
-                        t.setCapacityEconomy(t.getCapacityEconomy()-1);
+                        t.setCapacityEconomy(t.getCapacityEconomy() - 1);
                     }
-                }
-                else {
+                } else {
                     p.setSeatClass(SeatClass.First);
-                    t.setCapacityFirst(t.getCapacityFirst()-1);
+                    t.setCapacityFirst(t.getCapacityFirst() - 1);
                 }
-
-            }
-            else if(p.getTarget() == City.D){
+            } else if (p.getTarget() == City.D) {
                 Train t = trains.get(3);
-                if(t.getCapacityFirst()==0){
-                    if (t.getCapacityEconomy()==0){
+                if (t.getCapacityFirst() == 0) {
+                    if (t.getCapacityEconomy() == 0) {
                         p.setSeatClass(SeatClass.Business);
-                        t.setCapacityBusiness(t.getCapacityBusiness()-1);
-                    }
-                    else {
+                        t.setCapacityBusiness(t.getCapacityBusiness() - 1);
+                    } else {
                         p.setSeatClass(SeatClass.Economy);
-                        t.setCapacityEconomy(t.getCapacityEconomy()-1);
+                        t.setCapacityEconomy(t.getCapacityEconomy() - 1);
                     }
-                }
-                else {
+                } else {
                     p.setSeatClass(SeatClass.First);
-                    t.setCapacityFirst(t.getCapacityFirst()-1);
+                    t.setCapacityFirst(t.getCapacityFirst() - 1);
                 }
-
-            }
-            else if(p.getTarget() == City.E){
+            } else if (p.getTarget() == City.E) {
                 Train t = trains.get(4);
-                if(t.getCapacityFirst()==0){
-                    if (t.getCapacityEconomy()==0){
+                if (t.getCapacityFirst() == 0) {
+                    if (t.getCapacityEconomy() == 0) {
                         p.setSeatClass(SeatClass.Business);
-                        t.setCapacityBusiness(t.getCapacityBusiness()-1);
-                    }
-                    else {
+                        t.setCapacityBusiness(t.getCapacityBusiness() - 1);
+                    } else {
                         p.setSeatClass(SeatClass.Economy);
-                        t.setCapacityEconomy(t.getCapacityEconomy()-1);
+                        t.setCapacityEconomy(t.getCapacityEconomy() - 1);
                     }
-                }
-                else {
+                } else {
                     p.setSeatClass(SeatClass.First);
-                    t.setCapacityFirst(t.getCapacityFirst()-1);
+                    t.setCapacityFirst(t.getCapacityFirst() - 1);
                 }
-
-            }
-            else if(p.getTarget() == City.F){
+            } else if (p.getTarget() == City.F) {
                 Train t = trains.get(5);
-                if(t.getCapacityFirst()==0){
-                    if (t.getCapacityEconomy()==0){
+                if (t.getCapacityFirst() == 0) {
+                    if (t.getCapacityEconomy() == 0) {
                         p.setSeatClass(SeatClass.Business);
-                        t.setCapacityBusiness(t.getCapacityBusiness()-1);
-                    }
-                    else {
+                        t.setCapacityBusiness(t.getCapacityBusiness() - 1);
+                    } else {
                         p.setSeatClass(SeatClass.Economy);
-                        t.setCapacityEconomy(t.getCapacityEconomy()-1);
+                        t.setCapacityEconomy(t.getCapacityEconomy() - 1);
                     }
-                }
-                else {
+                } else {
                     p.setSeatClass(SeatClass.First);
-                    t.setCapacityFirst(t.getCapacityFirst()-1);
+                    t.setCapacityFirst(t.getCapacityFirst() - 1);
                 }
-
-            }
-            else  if(p.getTarget() == City.G){
+            } else if (p.getTarget() == City.G) {
                 Train t = trains.get(6);
-                if(t.getCapacityFirst()==0){
-                    if (t.getCapacityEconomy()==0){
+                if (t.getCapacityFirst() == 0) {
+                    if (t.getCapacityEconomy() == 0) {
                         p.setSeatClass(SeatClass.Business);
-                        t.setCapacityBusiness(t.getCapacityBusiness()-1);
-                    }
-                    else {
+                        t.setCapacityBusiness(t.getCapacityBusiness() - 1);
+                    } else {
                         p.setSeatClass(SeatClass.Economy);
-                        t.setCapacityEconomy(t.getCapacityEconomy()-1);
+                        t.setCapacityEconomy(t.getCapacityEconomy() - 1);
                     }
-                }
-                else {
+                } else {
                     p.setSeatClass(SeatClass.First);
-                    t.setCapacityFirst(t.getCapacityFirst()-1);
+                    t.setCapacityFirst(t.getCapacityFirst() - 1);
                 }
-
-            }
-            else if(p.getTarget() == City.H){
+            } else if (p.getTarget() == City.H) {
                 Train t = trains.get(7);
-                if(t.getCapacityFirst()==0){
-                    if (t.getCapacityEconomy()==0){
+                if (t.getCapacityFirst() == 0) {
+                    if (t.getCapacityEconomy() == 0) {
                         p.setSeatClass(SeatClass.Business);
-                        t.setCapacityBusiness(t.getCapacityBusiness()-1);
-                    }
-                    else {
+                        t.setCapacityBusiness(t.getCapacityBusiness() - 1);
+                    } else {
                         p.setSeatClass(SeatClass.Economy);
-                        t.setCapacityEconomy(t.getCapacityEconomy()-1);
+                        t.setCapacityEconomy(t.getCapacityEconomy() - 1);
                     }
-                }
-                else {
+                } else {
                     p.setSeatClass(SeatClass.First);
-                    t.setCapacityFirst(t.getCapacityFirst()-1);
+                    t.setCapacityFirst(t.getCapacityFirst() - 1);
                 }
-
-            }
-            else if(p.getTarget() == City.I){
+            } else if (p.getTarget() == City.I) {
                 Train t = trains.get(8);
-                if(t.getCapacityFirst()==0){
-                    if (t.getCapacityEconomy()==0){
+                if (t.getCapacityFirst() == 0) {
+                    if (t.getCapacityEconomy() == 0) {
                         p.setSeatClass(SeatClass.Business);
-                        t.setCapacityBusiness(t.getCapacityBusiness()-1);
-                    }
-                    else {
+                        t.setCapacityBusiness(t.getCapacityBusiness() - 1);
+                    } else {
                         p.setSeatClass(SeatClass.Economy);
-                        t.setCapacityEconomy(t.getCapacityEconomy()-1);
+                        t.setCapacityEconomy(t.getCapacityEconomy() - 1);
                     }
-                }
-                else {
+                } else {
                     p.setSeatClass(SeatClass.First);
-                    t.setCapacityFirst(t.getCapacityFirst()-1);
+                    t.setCapacityFirst(t.getCapacityFirst() - 1);
                 }
-
-            }
-            else if(p.getTarget() == City.J){
+            } else if (p.getTarget() == City.J) {
                 Train t = trains.get(9);
-                if(t.getCapacityFirst()==0){
-                    if (t.getCapacityEconomy()==0){
+                if (t.getCapacityFirst() == 0) {
+                    if (t.getCapacityEconomy() == 0) {
                         p.setSeatClass(SeatClass.Business);
-                        t.setCapacityBusiness(t.getCapacityBusiness()-1);
-                    }
-                    else {
+                        t.setCapacityBusiness(t.getCapacityBusiness() - 1);
+                    } else {
                         p.setSeatClass(SeatClass.Economy);
-                        t.setCapacityEconomy(t.getCapacityEconomy()-1);
+                        t.setCapacityEconomy(t.getCapacityEconomy() - 1);
                     }
-                }
-                else {
+                } else {
                     p.setSeatClass(SeatClass.First);
-                    t.setCapacityFirst(t.getCapacityFirst()-1);
+                    t.setCapacityFirst(t.getCapacityFirst() - 1);
                 }
             }
-
         } //Bad code
-
-        //Don't works
         L03_Gold_Platinum goldLounge = new L03_Gold_Platinum(null);
         L02_Bronze_Silver bronzeLounge = new L02_Bronze_Silver(goldLounge);
         L01_Blue blueLounge = new L01_Blue(bronzeLounge);
-
-        for(Passenger p : passengers){
+        for (Passenger p : passengers) {
             display.addListener(p);
-            //blueLounge.choseLounge(p);
+            blueLounge.choseLounge(p);
         }
         display.notifyPassengers(trains.get(0));
         trains.get(0).calculatepoints();
 
         //Test if points where added
         int points = 0;
-        for (Passenger p:passengers) {
+        for (Passenger p : passengers) {
             points += p.getState().getPoints();
         }
-        Assertions.assertTrue(points>0);
+        Assertions.assertTrue(points > 0);
 
         //Test if Persons have their Seatclass
         SeatClass seatClass = passengers[123].getSeatClass();
-        Assertions.assertTrue(seatClass == SeatClass.First || seatClass==SeatClass.Business|| seatClass==SeatClass.Economy);
+        Assertions.assertTrue(seatClass == SeatClass.First || seatClass == SeatClass.Business || seatClass == SeatClass.Economy);
+
+
+        //Test if passengers in Lounge
+
+        Assertions.assertTrue(blueLounge.getPassengersInLounge().size() > 0);
+        Assertions.assertTrue(goldLounge.getPassengersInLounge().size() == 0);
+        Assertions.assertTrue(bronzeLounge.getPassengersInLounge().size() == 0);
     }
 
 
