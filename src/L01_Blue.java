@@ -1,17 +1,25 @@
 public class L01_Blue extends Lounge {
 
     public L01_Blue(Lounge successor) {
-        this.setSuccessor(successor);
+        super(successor);
     }
 
-    public void choseLounge(Passenger passenger) {
-        if(passenger.getState() instanceof Blue)
-        {
-            System.out.println("Lounge Blue");
+    @Override
+    void choseLounge(Passenger passenger) {
+        if (canHandle(passenger)) {
+            if (passengersInLounge.size() < maxCapacity) {
+                super.passengersInLounge.add(passenger);
+            }
         }
-        else
-        {
-            super.choseLounge(passenger);
+        getSuccessor().choseLounge(passenger);
+    }
+
+
+    @Override
+    boolean canHandle(Passenger passenger) {
+        if (passenger.getState() instanceof Blue) {
+            return true;
         }
+        return false;
     }
 }

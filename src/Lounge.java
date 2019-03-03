@@ -1,27 +1,20 @@
-public class Lounge {
-    //EnumLounge name;
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Lounge {
     int maxCapacity = 2500;
     private Lounge successor;
 
-    public void choseLounge(Passenger passenger){
+    List<Passenger> passengersInLounge;
 
-        if (getSuccessor() != null)
-        {
-            getSuccessor().choseLounge(passenger);
-        }
-        else
-            System.out.println("unable to find the correct lounge : " );
+    public Lounge(Lounge successor) {
+        this.successor = successor;
+        passengersInLounge = new ArrayList<>();
     }
 
-    protected boolean canChoseLounge(Passenger passenger) {
-        if(passenger.getState() instanceof Blue && maxCapacity >0)
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+    abstract void choseLounge(Passenger passenger);
+
+    abstract boolean canHandle(Passenger passenger);
 
     public Lounge getSuccessor() {
         return successor;
