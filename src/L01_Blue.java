@@ -1,4 +1,5 @@
 public class L01_Blue extends Lounge {
+
     public L01_Blue(Lounge successor) {
         this.setSuccessor(successor);
     }
@@ -12,9 +13,5 @@ public class L01_Blue extends Lounge {
         {
             super.choseLounge(lounge);
         }
-        /*if (canHandleFile(fileName,".txt"))
-            System.out.println("text parser is handling the file : " + fileName);
-        else
-            super.parse(fileName);*/
     }
 }
