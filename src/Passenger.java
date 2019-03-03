@@ -10,6 +10,7 @@ public class Passenger {
         this.name = name;
     }
 
+
     //welche points hier übergeben ?
     public void promote(){
         state.promote(this,100);
